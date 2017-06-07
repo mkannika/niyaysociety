@@ -1,0 +1,153 @@
+/*=========================================
+=            Reset ccm.app.css            =
+=========================================*/
+body .ccm-ui div#ccm-logo{display: none!important;}
+
+.site-wrapper .ccm-ui input,
+.site-wrapper .ccm-ui textarea,
+.site-wrapper .ccm-ui select,
+.site-wrapper .ccm-ui .uneditable-input{width: 100%;height: auto;}
+
+
+.form-signin{margin: 150px auto;width: 300px;font-size: 14px;}
+/*.form-signin .form-group{margin-bottom: 0;}*/
+.form-signin .checkbox {margin-bottom: 15px;padding-left: 0;font-weight: normal;}
+.form-signin .form-control {position: relative;height: auto;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 10px;font-size: 16px;}
+.form-signin .form-control:focus {z-index: 2;}
+.form-signin input[type="email"],
+.form-signin input[type="text"],
+.form-signin input[type="password"],
+.form-signin textarea{width: 100%;}
+.form-signin input[name="uPassword"] {margin-bottom: 10px; width: 233px}
+.form-signin .action{margin-bottom: 20px;}
+.ccm-ui .input-append .add-on:last-child{
+	line-height: 22px;
+	height: 40px;
+	min-width: auto;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+	padding: 10px;
+}
+
+.form-signin #reset-password .ccm-input-text{
+	width: 100%;
+	border-radius: 4px;
+}
+
+.ccm-ui .input-append .add-on:focus{
+	outline:0;
+}
+
+.form-signin .input-group.input-group > input:first-child{
+	float: left;
+	width: 233px;
+	border-bottom: 1px solid #ddd
+	margin-bottom: 0;
+}
+
+.ccm-ui input,
+.ccm-ui textarea,
+.ccm-ui select,
+.ccm-ui .uneditable-input{
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: rgb(85, 85, 85);
+	background-color: rgb(255, 255, 255);
+	background-image: none;
+	border: 1px solid rgb(204, 204, 204);
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.ccm-ui form {margin: 0;}
+.ccm-ui a{color: #16a085;}
+.ccm-ui a:hover{color: #1abc9c;}
+.ccm-ui{height: 100%;width: 100%;}
+.ccm-ui > .container{width: 100%!important;height: 100%;padding: 0;margin:0;}
+.ccm-ui > .container > .row {margin-left: -15px;position: absolute;width: 50%;left: 25%;top: 10%;}
+.ccm-ui > .container > .row > div{margin: 0;float: none;}
+.ccm-ui .span10 {width: 100%;}
+.ccm-ui .row {margin-left: -15px;}
+.ccm-ui .btn{background-image: none;border: none;box-shadow: none;color: #fff;text-shadow: none;font-size: 14px;}
+.ccm-ui .btn-success {background-image: none;box-shadow: none;border: 0;text-shadow: none;padding: 7px 19px;font-size: 17px;line-height: 1.471;border-radius: 6px;font-weight: normal;-webkit-transition: opacity 1s linear;-moz-transition: opacity 1s linear;-ms-transition: opacity 1s linear;-o-transition: opacity 1s linear;transition: opacity 1s linear;}
+.ccm-ui .btn:hover{color: #fff;}
+.ccm-ui [class^="icon-"], .ccm-ui [class*=" icon-"]{background-image: none;}
+.ccm-ui .page-header {margin: 0 0 20px;}
+
+
+/*=====  End of Reset ccm.app.css  ======*/
+
+
+/*
+ * Base structure
+ */
+html,
+body{height: 100%;}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {display: table;width: 100%;height: 100%;min-height: 100%;background: url(/themes/niyaysociety/img/bg_login.png) center center;-webkit-background-size: cover;background-size: cover;-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);box-shadow: inset 0 0 100px rgba(0,0,0,.5);}
+.site-wrapper-inner {display: table-cell;vertical-align: top;}
+.cover-container {margin-right: auto;margin-left: auto;}
+
+
+/* Padding for spacing */
+.inner {padding: 30px;}
+
+
+/*
+ * Cover
+ */
+
+.cover {padding: 0 20px;}
+.cover .btn-lg {padding: 10px 20px;font-weight: normal;font-size: 16p;}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {color: #999; /* IE8 proofing */color: rgba(255,255,255,.5);}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+	/* Pull out the header and footer */
+	.masthead {
+		position: fixed;
+		top: 0;
+	}
+	.mastfoot {
+		position: fixed;
+		bottom: 0;
+	}
+	/* Start the vertical centering */
+	.site-wrapper-inner {
+		vertical-align: middle;
+	}
+	/* Handle the widths */
+	.masthead,
+	.mastfoot,
+	.cover-container {
+		width: 100%; /* Must be percentage or pixels for horizontal alignment */
+	}
+}
+
+@media (min-width: 992px) {
+	.masthead,
+	.mastfoot,
+	.cover-container {
+		width: 700px;
+	}
+}
