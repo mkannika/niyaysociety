@@ -19,7 +19,7 @@ $img = $parentID->getAttribute('thumbnail');
 $userID = $parentID->getCollectionUserID();
 $pageOwner = UserInfo::getByID($userID);
 $av = Loader::helper('concrete/avatar');
-//$userOwner = $pageOwner->getUserName();
+$userOwner = $pageOwner->getUserName();
 
 //Get Attribute
 $status = $parentID->getAttribute('status');
@@ -49,11 +49,11 @@ if ($img) {
 			<div class="all-prop">
 				<h1><?php echo $parentID->getCollectionName(); ?></h1>
 				<div class="author">ผู้แต่ง
-				<?php /*if($pageOwner->getAttribute('penname') != ""){ ?>
+				<?php if($pageOwner->getAttribute('penname') != ""){ ?>
 				<?php echo '<a href="/profile/view/'.$userID.'">'.$pageOwner->getAttribute('penname').'</a>'; ?>
 				<? }else{ ?>
-				<!--<?php echo '<a href="/profile/view/'.$userID.'">'.$userOwner.'</a>'; ?>-->
-				<?php }*/ ?>
+				<?php echo '<a href="/profile/view/'.$userID.'">'.$userOwner.'</a>'; ?>
+				<?php } ?>
 				</div>
 			</div>
 		</div>
