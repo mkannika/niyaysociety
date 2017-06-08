@@ -7,8 +7,5 @@ $this->inc('elements/header.php'); ?>
 			<?php $a = new Area('Content'); $a->display($c); ?>
 		</div>
 	</div>
-	<div class="test">
-
-	</div>
 
 <?php $this->inc('elements/footer.php'); ?>
