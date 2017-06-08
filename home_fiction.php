@@ -46,50 +46,6 @@ if($row_score->RecordCount() > 0){
 	$checkVoteScore = 'false';
 }
 
-
-// Create new vote information of current user.
-/*function createVoteInfo(){
-
-	$v = array( $uID, $cID, $iph->getRequestIP());
-	$q = "INSERT INTO `VoteSystem` (`uID`, `cID`, `ipAddress`) VALUES (?, ?, ?)";
-	$db->Execute($q, $v);
-
-}
-
-// Update latest voted's user on VoteSystem database table
-function updateVoteInfo(){
-
-	// Update score
-	$q = "UPDATE `VoteSystem` SET `timestamp` = now() WHERE `uID` = $uID AND `cID` = $cID";
-	$db->Execute($q);
-
-
-}
-
-//Create vote score id on VoteScore database.
-function createVoteScore(){
-
-	$v = array( $cID, intval($_POST['vote']));
-	$q = "INSERT INTO `VoteScore` (`cID`, `score`) VALUES (?, ?)";
-	$db->Execute($q, $v);
-	successMsg($_POST['vote']);
-
-}
-
-// Update score on VoteScore database table.
-function updateVoteScore(){
-
-	$getScore = $db->GetOne("SELECT `score` FROM `VoteScore` WHERE `cID` = $cID");
-	$total = $getScore + intval($_POST['vote']);
-
-	// Update score
-	$q = "UPDATE `VoteScore` SET `score` = $total WHERE `cID` = $cID";
-	$db->Execute($q);
-	successMsg($_POST['vote']);
-
-}*/
-
-
 // Message for success
 function successMsg($score){
 
