@@ -1,0 +1,104 @@
+<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+
+<?php $this->addHeaderItem('<meta name="viewport" content="width=device-width, initial-scale=1">'); ?>
+
+<link rel="stylesheet" media="screen" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/themes/niyaysociety/css/login.css">
+<link rel="stylesheet" type="text/css" href="/themes/niyaysociety/css/global.css">
+<link rel="stylesheet" type="text/css" href="/themes/niyaysociety/css/custom-style.css">
+
+<?php Loader::library('authentication/open_id');?>
+<?php $form = Loader::helper('form'); ?>
+<script type="text/javascript">
+$(function() {
+	$("input[name=uName]").focus();
+});
+</script>
+
+<div class="site-wrapper">
+	<div class="site-wrapper-inner">
+		<div class="cover-container">
+			<div class="inner cover">
+				<div class="form-signin">
+					<div class="panel panel-default animated fadeInDown">
+						<div class="panel-body">
+							<div class="page-header"><h1>Login</h1></div>
+							<form method="post" action="<?php echo $this->url('/login', 'do_login')?>">
+								<div class="form-group">
+									<input type="text" class="form-control login-field" placeholder="<?php if (USER_REGISTRATION_WITH_EMAIL_ADDRESS == true) { ?><?php echo t('Email Address')?><?php } else { ?><?php echo t('Username')?><?php } ?>" name="uName" id="uName" <?php echo (isset($uName)?'value="'.$uName.'"':'');?> />
+								</div>
+
+								<input type="password" class="form-control" name="uPassword" id="uPassword" placeholder="Password" data-toggle="password" data-placement="after" />
+								
+								<div class="checkbox">
+									<label><input type="checkbox" name="uMaintainLogin" id="uMaintainLogin" value="1"><?php echo t('จำฉันไว้ในระบบ')?></label>
+								</div>
+
+								<div class="action form-group">
+									<?php echo $form->submit('submit', t('ล็อกอิน'), array('class' => 'btn btn-success btn-lg btn-block'))?>
+								</div>
+
+								<div class="clearfix">
+									<a data-toggle="modal" data-target="#forgetPass" class="pull-left">ลืมรหัสผ่าน?</a>
+									<a href="/register" class="pull-right">สมัครสมาชิก</a>
+								</div>
+
+							</form><!--/.form-horizontal-->
+
+							<div class="social-login">
+								<a style="background-color:#3b5998" href="<?php echo $loginUrl; ?>" class="btn btn-block btn-lg btn-facebook btn-block"><i class="fa fa-facebook-official" aria-hidden="true"></i>  ล็อกอินด้วย Facebook</a>
+								<a style="background-color:#dd4b39" href="#" class="btn btn-block btn-lg btn-google btn-block"><i class="fa fa-google-plus" aria-hidden="true"></i>  ล็อกอินด้วย Google Plus</a>
+							</div>
+
+						</div><!--/.panel-body-->
+					</div>
+				</div><!--/.row-->
+			</div><!--/.inner-->
+
+		</div><!--/.cover-container-->
+	</div><!--/.site-wrapper-inner-->
+</div><!--/.site-wrapper-->
+
+
+<!--===========================================
+=            Forgot Password Modal            =
+============================================-->
+
+<div class="modal fade" id="forgetPass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">ลืมรหัสผ่าน?</h4>
+			</div>
+			<div class="modal-body">
+				<form method="post" action="<?php echo $this->url('/login', 'forgot_password'); ?>" class="ccm-forgot-password-form">
+					<div class="alert alert-warning img-rounded">
+						<?php echo t('ลืมรหัสผ่าน?'); ?><br>
+						<?php echo t("กรอกอีเมล์ของท่าน ระบบส่งจะลิ้งค์ไปยังอีเมล์ของท่านเพื่อตั้งรหัสผ่านใหม่"); ?>
+					</div>
+					<input type="hidden" name="rcID" value="<?php echo $rcID; ?>" />
+					<div class="form-group">
+						<input type="text" name="uEmail" placeholder="Email Address" value="" class="ccm-input-text form-control">
+					</div>
+					<?php echo $form->submit('submit', t('Reset and Email Password'), array('class' => 'btn btn-success btn-lg btn-block')); ?>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--====  End of Forgot Password Modal  ====-->
+
+
+<!--====  End of Register Modal  ====-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/themes/niyaysociety/js/bootstrap-show-password.js"></script>
+<script type="text/javascript">
+	(function ($) {
+		$('.alert-error').addClass('animated fadeIn');
+	})(jQuery);
+</script>
