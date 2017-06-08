@@ -19,7 +19,7 @@ $img = $parentID->getAttribute('thumbnail');
 $userID = $parentID->getCollectionUserID();
 $pageOwner = UserInfo::getByID($userID);
 $av = Loader::helper('concrete/avatar');
-$userOwner = $pageOwner->getUserName();
+//$userOwner = $pageOwner->getUserName();
 
 //Get Attribute
 $status = $parentID->getAttribute('status');
@@ -43,17 +43,17 @@ if ($img) {
 		<div class="container">
 			<div class="cover-book">
 				<a class="zoom" href="<?php echo $nh->getCollectionURL($parentID); ?>">
-					<img src="<?php if ($img) { echo $ih->getThumbnail($img, 200, 303, true)->src; } else { echo 'http://placehold.it/200x303'; } ?>" alt="<?php echo $parentID->getCollectionName(); ?>">	
+					<img src="<?php if ($img) { echo $ih->getThumbnail($img, 200, 303, true)->src; } else { echo 'http://placehold.it/200x303'; } ?>" alt="<?php echo $parentID->getCollectionName(); ?>">
 				</a>
 			</div>
 			<div class="all-prop">
 				<h1><?php echo $parentID->getCollectionName(); ?></h1>
-				<div class="author">ผู้แต่ง 
-				<?php if($pageOwner->getAttribute('penname') != ""){ ?>
+				<div class="author">ผู้แต่ง
+				<?php /*if($pageOwner->getAttribute('penname') != ""){ ?>
 				<?php echo '<a href="/profile/view/'.$userID.'">'.$pageOwner->getAttribute('penname').'</a>'; ?>
 				<? }else{ ?>
-				<?php echo '<a href="/profile/view/'.$userID.'">'.$userOwner.'</a>'; ?>
-				<?php } ?>
+				<!--<?php echo '<a href="/profile/view/'.$userID.'">'.$userOwner.'</a>'; ?>-->
+				<?php }*/ ?>
 				</div>
 			</div>
 		</div>
